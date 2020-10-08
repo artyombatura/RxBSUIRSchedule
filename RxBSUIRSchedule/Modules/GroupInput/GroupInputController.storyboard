@@ -36,7 +36,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="groupInputTextField" destination="ha3-8F-uGd" id="Odr-zw-GO9"/>
+                        <outlet property="groupInputTextField" destination="ha3-8F-uGd" id="rHC-LZ-sG6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBe-3e-vYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

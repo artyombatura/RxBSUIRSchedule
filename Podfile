@@ -8,5 +8,7 @@ target 'RxBSUIRSchedule' do
   # Pods for RxBSUIRSchedule
     pod 'RxSwift', '5.0'
     pod 'RxCocoa', '5.0'
+    pod 'SwiftyJSON', '~> 4.0'
+    pod 'IQKeyboardManager'
 
 end

@@ -12,7 +12,7 @@ extension UIViewController {
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Отмена",
+        let cancelAction = UIAlertAction(title: "Закрыть",
                                          style: .cancel) { _ in
             alert.dismiss(animated: true, completion: nil)
         }

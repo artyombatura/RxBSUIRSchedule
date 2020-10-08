@@ -21,6 +21,18 @@
 		0F2A0849252E3B33000B4015 /* GroupScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A0848252E3B33000B4015 /* GroupScheduleController.swift */; };
 		0F2A084C252E3B3E000B4015 /* GroupScheduleController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A084B252E3B3E000B4015 /* GroupScheduleController.storyboard */; };
 		73AF25CD5C0DCBE37B3AF1C0 /* Pods_RxBSUIRSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B99B3508D3382FB7F05BE4 /* Pods_RxBSUIRSchedule.framework */; };
+		F878F3FE252EFEAD0056D919 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F3FD252EFEAD0056D919 /* Schedule.swift */; };
+		F878F401252EFEE70056D919 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F400252EFEE70056D919 /* Employee.swift */; };
+		F878F404252EFEF30056D919 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F403252EFEF30056D919 /* Day.swift */; };
+		F878F407252EFF550056D919 /* JSONResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F406252EFF550056D919 /* JSONResponseDecoder.swift */; };
+		F878F40A252EFF6A0056D919 /* ResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F409252EFF6A0056D919 /* ResponseDecoder.swift */; };
+		F878F410252F02330056D919 /* JSONToScheduleResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F40F252F02330056D919 /* JSONToScheduleResponseDecoder.swift */; };
+		F878F416252F029B0056D919 /* JSONToEmployeeResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F415252F029B0056D919 /* JSONToEmployeeResponseDecoder.swift */; };
+		F878F41B252F02B70056D919 /* JSONToDayListResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F41A252F02B70056D919 /* JSONToDayListResponseDecoder.swift */; };
+		F878F41E252F02D80056D919 /* JSONToDayResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F41D252F02D80056D919 /* JSONToDayResponseDecoder.swift */; };
+		F878F423252F07580056D919 /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F422252F07580056D919 /* SubjectTableViewCell.swift */; };
+		F878F427252F08BD0056D919 /* ProjectColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F426252F08BD0056D919 /* ProjectColors.swift */; };
+		F878F42D252F098F0056D919 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F42C252F098F0056D919 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +54,18 @@
 		0F2A084B252E3B3E000B4015 /* GroupScheduleController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupScheduleController.storyboard; sourceTree = "<group>"; };
 		74598AD09C5BF6A8503516AC /* Pods-RxBSUIRSchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBSUIRSchedule.release.xcconfig"; path = "Target Support Files/Pods-RxBSUIRSchedule/Pods-RxBSUIRSchedule.release.xcconfig"; sourceTree = "<group>"; };
 		DD45D7AEB756B24DAA06D261 /* Pods-RxBSUIRSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBSUIRSchedule.debug.xcconfig"; path = "Target Support Files/Pods-RxBSUIRSchedule/Pods-RxBSUIRSchedule.debug.xcconfig"; sourceTree = "<group>"; };
+		F878F3FD252EFEAD0056D919 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		F878F400252EFEE70056D919 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		F878F403252EFEF30056D919 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		F878F406252EFF550056D919 /* JSONResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponseDecoder.swift; sourceTree = "<group>"; };
+		F878F409252EFF6A0056D919 /* ResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoder.swift; sourceTree = "<group>"; };
+		F878F40F252F02330056D919 /* JSONToScheduleResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToScheduleResponseDecoder.swift; sourceTree = "<group>"; };
+		F878F415252F029B0056D919 /* JSONToEmployeeResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToEmployeeResponseDecoder.swift; sourceTree = "<group>"; };
+		F878F41A252F02B70056D919 /* JSONToDayListResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToDayListResponseDecoder.swift; sourceTree = "<group>"; };
+		F878F41D252F02D80056D919 /* JSONToDayResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToDayResponseDecoder.swift; sourceTree = "<group>"; };
+		F878F422252F07580056D919 /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
+		F878F426252F08BD0056D919 /* ProjectColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectColors.swift; sourceTree = "<group>"; };
+		F878F42C252F098F0056D919 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +102,7 @@
 		0F2A080A252E3131000B4015 /* RxBSUIRSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				F878F3F6252EFE5F0056D919 /* Model */,
 				0F2A083D252E3755000B4015 /* API */,
 				0F2A0830252E3287000B4015 /* Modules */,
 				0F2A0829252E31C9000B4015 /* Utilities */,
@@ -91,6 +116,8 @@
 		0F2A0829252E31C9000B4015 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F878F42B252F09820056D919 /* Helpers */,
+				F878F425252F08AC0056D919 /* Constants */,
 				0F2A0841252E37E5000B4015 /* Configurations */,
 				0F2A0839252E3504000B4015 /* Class+Extensions */,
 				0F2A082A252E31D2000B4015 /* Protocols */,
@@ -146,6 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				0F2A083E252E376E000B4015 /* APIRequests.swift */,
+				F878F406252EFF550056D919 /* JSONResponseDecoder.swift */,
+				F878F409252EFF6A0056D919 /* ResponseDecoder.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -161,6 +190,7 @@
 		0F2A0847252E3B1D000B4015 /* GroupSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				F878F420252F073E0056D919 /* Subviews */,
 				0F2A0848252E3B33000B4015 /* GroupScheduleController.swift */,
 				0F2A084B252E3B3E000B4015 /* GroupScheduleController.storyboard */,
 			);
@@ -182,6 +212,68 @@
 				07B99B3508D3382FB7F05BE4 /* Pods_RxBSUIRSchedule.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F878F3F6252EFE5F0056D919 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F878F40D252F02200056D919 /* Schedule */,
+				F878F413252F02930056D919 /* Employee */,
+				F878F418252F02AE0056D919 /* Day */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F878F40D252F02200056D919 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				F878F3FD252EFEAD0056D919 /* Schedule.swift */,
+				F878F40F252F02330056D919 /* JSONToScheduleResponseDecoder.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		F878F413252F02930056D919 /* Employee */ = {
+			isa = PBXGroup;
+			children = (
+				F878F400252EFEE70056D919 /* Employee.swift */,
+				F878F415252F029B0056D919 /* JSONToEmployeeResponseDecoder.swift */,
+			);
+			path = Employee;
+			sourceTree = "<group>";
+		};
+		F878F418252F02AE0056D919 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				F878F403252EFEF30056D919 /* Day.swift */,
+				F878F41A252F02B70056D919 /* JSONToDayListResponseDecoder.swift */,
+				F878F41D252F02D80056D919 /* JSONToDayResponseDecoder.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		F878F420252F073E0056D919 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				F878F422252F07580056D919 /* SubjectTableViewCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		F878F425252F08AC0056D919 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F878F426252F08BD0056D919 /* ProjectColors.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F878F42B252F09820056D919 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F878F42C252F098F0056D919 /* ImageLoader.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,14 +392,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F878F41E252F02D80056D919 /* JSONToDayResponseDecoder.swift in Sources */,
 				0F2A082C252E31DE000B4015 /* StoryboardedProtocol.swift in Sources */,
+				F878F42D252F098F0056D919 /* ImageLoader.swift in Sources */,
+				F878F410252F02330056D919 /* JSONToScheduleResponseDecoder.swift in Sources */,
 				0F2A0843252E37F2000B4015 /* APIConfigurations.swift in Sources */,
 				0F2A080C252E3131000B4015 /* AppDelegate.swift in Sources */,
+				F878F401252EFEE70056D919 /* Employee.swift in Sources */,
+				F878F404252EFEF30056D919 /* Day.swift in Sources */,
+				F878F427252F08BD0056D919 /* ProjectColors.swift in Sources */,
+				F878F3FE252EFEAD0056D919 /* Schedule.swift in Sources */,
 				0F2A083B252E3513000B4015 /* UIViewController+Extensions.swift in Sources */,
 				0F2A0833252E32AB000B4015 /* GroupInputController.swift in Sources */,
+				F878F423252F07580056D919 /* SubjectTableViewCell.swift in Sources */,
 				0F2A083F252E376E000B4015 /* APIRequests.swift in Sources */,
 				0F2A0849252E3B33000B4015 /* GroupScheduleController.swift in Sources */,
+				F878F40A252EFF6A0056D919 /* ResponseDecoder.swift in Sources */,
 				0F2A080E252E3131000B4015 /* SceneDelegate.swift in Sources */,
+				F878F41B252F02B70056D919 /* JSONToDayListResponseDecoder.swift in Sources */,
+				F878F407252EFF550056D919 /* JSONResponseDecoder.swift in Sources */,
+				F878F416252F029B0056D919 /* JSONToEmployeeResponseDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +559,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = artyombatura.RxBSUIRSchedule;
+				PRODUCT_BUNDLE_IDENTIFIER = artyombatura.RxBSUIRSchedule.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -476,7 +580,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = artyombatura.RxBSUIRSchedule;
+				PRODUCT_BUNDLE_IDENTIFIER = artyombatura.RxBSUIRSchedule.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

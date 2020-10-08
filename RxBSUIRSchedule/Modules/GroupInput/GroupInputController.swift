@@ -7,29 +7,38 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class GroupInputController: UIViewController, Storyboarded {
     
     // MARK: - Properties
-    @IBOutlet weak var groupInputTextField: UITextField!
+    private var groupNumber: Int = 0
     
     // MARK: - Rx
     private let disposeBag = DisposeBag()
-    private let isNextAllowed = PublishSubject<Bool>()
-    private let groupNumber = BehaviorSubject<Int>(value: 0)
+    private let canGoNext = BehaviorSubject<Bool>(value: false)
     
     // MARK: - Subviews
+    @IBOutlet weak var groupInputTextField: UITextField!
+    private var nextButton: UIBarButtonItem!
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Observables subscriptions
-        subscribeOnNextAllowed()
         
         // UI
         configNavigationBar()
         title = "Расписание БГУИР"
+        
+        // Rx subscriptions
+        subscribeOnGroupTextField()
+        subscribeOnCanGoNext()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        self.showAllert(title: "Тестовая группа", message: "814303")
     }
 }
 
@@ -37,42 +46,42 @@ class GroupInputController: UIViewController, Storyboarded {
 extension GroupInputController {
     @objc
     private func goNextScreen() {
-        guard
-            let text = groupInputTextField.text
-        else {
-            isNextAllowed.onNext(false)
-            return
-        }
-        
-        if text.isEmpty {
-            isNextAllowed.onNext(false)
-        } else {
-            guard
-                let groupNumber = Int(text)
-            else {
-                isNextAllowed.onNext(false)
-                return
-            }
-            
-            isNextAllowed.onNext(true)
-            self.groupNumber.onNext(groupNumber)
-        }
+        let scheduleController = GroupScheduleController.storyboardInstance()
+        scheduleController.groupNumber.onNext(self.groupNumber)
+        self.navigationController?.pushViewController(scheduleController,
+                                                      animated: true)
     }
 }
 
 // MARK: - Rx subscriptions
 extension GroupInputController {
-    private func subscribeOnNextAllowed() {
-        isNextAllowed
-            .subscribe(onNext: { [weak self] (flag) in
-                if flag {
-                    let scheduleController = GroupScheduleController.storyboardInstance()
-                    self?.navigationController?.pushViewController(scheduleController,
-                                                                   animated: true)
-                } else {
-                    self?.showAllert(title: "Номер группы не заполнен",
-                                    message: "Введите номер группы и попробуйте снова")
+    private func subscribeOnGroupTextField() {
+        groupInputTextField.rx.controlEvent([.editingChanged])
+            .asObservable()
+            .subscribe(onNext: { [weak self] _ in
+                guard
+                    let text = self?.groupInputTextField.text
+                else { return }
+        
+                let flag = !text.isEmpty
+                
+                guard
+                    let groupNumber = Int(text)
+                else {
+                    self?.canGoNext.onNext(false)
+                    return
                 }
+                
+                self?.groupNumber = groupNumber
+                self?.canGoNext.onNext(flag)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    private func subscribeOnCanGoNext() {
+        canGoNext
+            .subscribe(onNext: { [weak self] flag in
+                self?.nextButton.isEnabled = flag
             })
             .disposed(by: disposeBag)
     }
@@ -82,9 +91,10 @@ extension GroupInputController {
 // MARK: - Config navigationBar
 extension GroupInputController {
     private func configNavigationBar() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Далее",
-                                                                 style: .done,
-                                                                 target: self,
-                                                                 action: #selector(goNextScreen))
+        nextButton = UIBarButtonItem(title: "Далее",
+                                     style: .done,
+                                     target: self,
+                                     action: #selector(goNextScreen))
+        self.navigationItem.rightBarButtonItem = nextButton
     }
 }
