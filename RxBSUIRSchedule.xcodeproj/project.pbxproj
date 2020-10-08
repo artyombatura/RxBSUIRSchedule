@@ -13,8 +13,6 @@
 		0F2A0818252E3133000B4015 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A0816252E3133000B4015 /* LaunchScreen.storyboard */; };
 		0F2A0821252E313F000B4015 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A0820252E313F000B4015 /* .gitignore */; };
 		0F2A082C252E31DE000B4015 /* StoryboardedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A082B252E31DE000B4015 /* StoryboardedProtocol.swift */; };
-		0F2A0833252E32AB000B4015 /* GroupInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A0832252E32AB000B4015 /* GroupInputController.swift */; };
-		0F2A0837252E32B9000B4015 /* GroupInputController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A0836252E32B9000B4015 /* GroupInputController.storyboard */; };
 		0F2A083B252E3513000B4015 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A083A252E3513000B4015 /* UIViewController+Extensions.swift */; };
 		0F2A083F252E376E000B4015 /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A083E252E376E000B4015 /* APIRequests.swift */; };
 		0F2A0843252E37F2000B4015 /* APIConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A0842252E37F2000B4015 /* APIConfigurations.swift */; };
@@ -33,6 +31,7 @@
 		F878F423252F07580056D919 /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F422252F07580056D919 /* SubjectTableViewCell.swift */; };
 		F878F427252F08BD0056D919 /* ProjectColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F426252F08BD0056D919 /* ProjectColors.swift */; };
 		F878F42D252F098F0056D919 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F42C252F098F0056D919 /* ImageLoader.swift */; };
+		F878F461252F2B3B0056D919 /* GroupScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F460252F2B3B0056D919 /* GroupScheduleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,8 +44,6 @@
 		0F2A0819252E3133000B4015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F2A0820252E313F000B4015 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0F2A082B252E31DE000B4015 /* StoryboardedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardedProtocol.swift; sourceTree = "<group>"; };
-		0F2A0832252E32AB000B4015 /* GroupInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInputController.swift; sourceTree = "<group>"; };
-		0F2A0836252E32B9000B4015 /* GroupInputController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupInputController.storyboard; sourceTree = "<group>"; };
 		0F2A083A252E3513000B4015 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0F2A083E252E376E000B4015 /* APIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequests.swift; sourceTree = "<group>"; };
 		0F2A0842252E37F2000B4015 /* APIConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurations.swift; sourceTree = "<group>"; };
@@ -66,6 +63,7 @@
 		F878F422252F07580056D919 /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
 		F878F426252F08BD0056D919 /* ProjectColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectColors.swift; sourceTree = "<group>"; };
 		F878F42C252F098F0056D919 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		F878F460252F2B3B0056D919 /* GroupScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupScheduleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,18 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				0F2A0847252E3B1D000B4015 /* GroupSchedule */,
-				0F2A0831252E328F000B4015 /* GroupInput */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		0F2A0831252E328F000B4015 /* GroupInput */ = {
-			isa = PBXGroup;
-			children = (
-				0F2A0832252E32AB000B4015 /* GroupInputController.swift */,
-				0F2A0836252E32B9000B4015 /* GroupInputController.storyboard */,
-			);
-			path = GroupInput;
 			sourceTree = "<group>";
 		};
 		0F2A0839252E3504000B4015 /* Class+Extensions */ = {
@@ -190,9 +178,8 @@
 		0F2A0847252E3B1D000B4015 /* GroupSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				F878F420252F073E0056D919 /* Subviews */,
-				0F2A0848252E3B33000B4015 /* GroupScheduleController.swift */,
-				0F2A084B252E3B3E000B4015 /* GroupScheduleController.storyboard */,
+				F878F45F252F2B2D0056D919 /* VM */,
+				F878F45D252F2B1B0056D919 /* VC */,
 			);
 			path = GroupSchedule;
 			sourceTree = "<group>";
@@ -276,6 +263,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		F878F45D252F2B1B0056D919 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A0848252E3B33000B4015 /* GroupScheduleController.swift */,
+				0F2A084B252E3B3E000B4015 /* GroupScheduleController.storyboard */,
+				F878F420252F073E0056D919 /* Subviews */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		F878F45F252F2B2D0056D919 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				F878F460252F2B3B0056D919 /* GroupScheduleViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,7 +344,6 @@
 				0F2A084C252E3B3E000B4015 /* GroupScheduleController.storyboard in Resources */,
 				0F2A0818252E3133000B4015 /* LaunchScreen.storyboard in Resources */,
 				0F2A0815252E3133000B4015 /* Assets.xcassets in Resources */,
-				0F2A0837252E32B9000B4015 /* GroupInputController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,13 +407,13 @@
 				F878F427252F08BD0056D919 /* ProjectColors.swift in Sources */,
 				F878F3FE252EFEAD0056D919 /* Schedule.swift in Sources */,
 				0F2A083B252E3513000B4015 /* UIViewController+Extensions.swift in Sources */,
-				0F2A0833252E32AB000B4015 /* GroupInputController.swift in Sources */,
 				F878F423252F07580056D919 /* SubjectTableViewCell.swift in Sources */,
 				0F2A083F252E376E000B4015 /* APIRequests.swift in Sources */,
 				0F2A0849252E3B33000B4015 /* GroupScheduleController.swift in Sources */,
 				F878F40A252EFF6A0056D919 /* ResponseDecoder.swift in Sources */,
 				0F2A080E252E3131000B4015 /* SceneDelegate.swift in Sources */,
 				F878F41B252F02B70056D919 /* JSONToDayListResponseDecoder.swift in Sources */,
+				F878F461252F2B3B0056D919 /* GroupScheduleViewModel.swift in Sources */,
 				F878F407252EFF550056D919 /* JSONResponseDecoder.swift in Sources */,
 				F878F416252F029B0056D919 /* JSONToEmployeeResponseDecoder.swift in Sources */,
 			);

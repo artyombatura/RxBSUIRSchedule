@@ -53,8 +53,9 @@ extension SubjectTableViewCell {
     private func configure() {
         self.backgroundColor = .clear
         
-        parentView.backgroundColor = ProjectColors.mainWhiteColor
         parentView.layer.cornerRadius = 16.0
+        parentView.layer.borderColor = UIColor.blue.cgColor
+        parentView.layer.borderWidth = 2.0
         
         subjectImageView.layer.cornerRadius = subjectImageView.frame.height / 2
     }

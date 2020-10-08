@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let windowScene = scene as? UIWindowScene
         else { return }
         
-        let controller = GroupInputController.storyboardInstance()
+        let controller = GroupScheduleController.storyboardInstance()
         let navigationController = UINavigationController(rootViewController: controller)
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigationController
