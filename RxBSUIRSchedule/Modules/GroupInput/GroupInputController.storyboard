@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="STR-6t-VJk">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Group Input Controller-->
+        <scene sceneID="cN7-QT-jCq">
+            <objects>
+                <viewController storyboardIdentifier="GroupInputController" id="STR-6t-VJk" customClass="GroupInputController" customModule="RxBSUIRSchedule" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X6M-OV-arH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите номер группы" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ha3-8F-uGd">
+                                <rect key="frame" x="40" y="428" width="334" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="iWB-GT-n3w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YZg-aW-sbW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ha3-8F-uGd" firstAttribute="leading" secondItem="YZg-aW-sbW" secondAttribute="leading" constant="40" id="6DW-ur-pj3"/>
+                            <constraint firstItem="YZg-aW-sbW" firstAttribute="trailing" secondItem="ha3-8F-uGd" secondAttribute="trailing" constant="40" id="791-BO-t96"/>
+                            <constraint firstItem="ha3-8F-uGd" firstAttribute="centerY" secondItem="YZg-aW-sbW" secondAttribute="centerY" id="jbW-B7-uGh"/>
+                            <constraint firstItem="ha3-8F-uGd" firstAttribute="centerX" secondItem="YZg-aW-sbW" secondAttribute="centerX" id="kn3-BE-yBV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="groupInputTextField" destination="ha3-8F-uGd" id="Odr-zw-GO9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eBe-3e-vYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="122" y="106"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

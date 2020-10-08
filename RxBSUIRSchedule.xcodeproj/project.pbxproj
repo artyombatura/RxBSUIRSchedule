@@ -3,29 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0F2A080C252E3131000B4015 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A080B252E3131000B4015 /* AppDelegate.swift */; };
 		0F2A080E252E3131000B4015 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A080D252E3131000B4015 /* SceneDelegate.swift */; };
-		0F2A0810252E3131000B4015 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A080F252E3131000B4015 /* ViewController.swift */; };
-		0F2A0813252E3131000B4015 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A0811252E3131000B4015 /* Main.storyboard */; };
 		0F2A0815252E3133000B4015 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A0814252E3133000B4015 /* Assets.xcassets */; };
 		0F2A0818252E3133000B4015 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A0816252E3133000B4015 /* LaunchScreen.storyboard */; };
 		0F2A0821252E313F000B4015 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A0820252E313F000B4015 /* .gitignore */; };
+		0F2A082C252E31DE000B4015 /* StoryboardedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A082B252E31DE000B4015 /* StoryboardedProtocol.swift */; };
+		0F2A0833252E32AB000B4015 /* GroupInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A0832252E32AB000B4015 /* GroupInputController.swift */; };
+		0F2A0837252E32B9000B4015 /* GroupInputController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A0836252E32B9000B4015 /* GroupInputController.storyboard */; };
+		0F2A083B252E3513000B4015 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A083A252E3513000B4015 /* UIViewController+Extensions.swift */; };
+		0F2A083F252E376E000B4015 /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A083E252E376E000B4015 /* APIRequests.swift */; };
+		0F2A0843252E37F2000B4015 /* APIConfigurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A0842252E37F2000B4015 /* APIConfigurations.swift */; };
+		0F2A0849252E3B33000B4015 /* GroupScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2A0848252E3B33000B4015 /* GroupScheduleController.swift */; };
+		0F2A084C252E3B3E000B4015 /* GroupScheduleController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F2A084B252E3B3E000B4015 /* GroupScheduleController.storyboard */; };
+		73AF25CD5C0DCBE37B3AF1C0 /* Pods_RxBSUIRSchedule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B99B3508D3382FB7F05BE4 /* Pods_RxBSUIRSchedule.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07B99B3508D3382FB7F05BE4 /* Pods_RxBSUIRSchedule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBSUIRSchedule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F2A0808252E3131000B4015 /* RxBSUIRSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxBSUIRSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F2A080B252E3131000B4015 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F2A080D252E3131000B4015 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0F2A080F252E3131000B4015 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0F2A0812252E3131000B4015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F2A0814252E3133000B4015 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F2A0817252E3133000B4015 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F2A0819252E3133000B4015 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F2A0820252E313F000B4015 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		0F2A082B252E31DE000B4015 /* StoryboardedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardedProtocol.swift; sourceTree = "<group>"; };
+		0F2A0832252E32AB000B4015 /* GroupInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInputController.swift; sourceTree = "<group>"; };
+		0F2A0836252E32B9000B4015 /* GroupInputController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupInputController.storyboard; sourceTree = "<group>"; };
+		0F2A083A252E3513000B4015 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0F2A083E252E376E000B4015 /* APIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequests.swift; sourceTree = "<group>"; };
+		0F2A0842252E37F2000B4015 /* APIConfigurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfigurations.swift; sourceTree = "<group>"; };
+		0F2A0848252E3B33000B4015 /* GroupScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupScheduleController.swift; sourceTree = "<group>"; };
+		0F2A084B252E3B3E000B4015 /* GroupScheduleController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GroupScheduleController.storyboard; sourceTree = "<group>"; };
+		74598AD09C5BF6A8503516AC /* Pods-RxBSUIRSchedule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBSUIRSchedule.release.xcconfig"; path = "Target Support Files/Pods-RxBSUIRSchedule/Pods-RxBSUIRSchedule.release.xcconfig"; sourceTree = "<group>"; };
+		DD45D7AEB756B24DAA06D261 /* Pods-RxBSUIRSchedule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBSUIRSchedule.debug.xcconfig"; path = "Target Support Files/Pods-RxBSUIRSchedule/Pods-RxBSUIRSchedule.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73AF25CD5C0DCBE37B3AF1C0 /* Pods_RxBSUIRSchedule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +62,8 @@
 				0F2A0820252E313F000B4015 /* .gitignore */,
 				0F2A080A252E3131000B4015 /* RxBSUIRSchedule */,
 				0F2A0809252E3131000B4015 /* Products */,
+				502431D160E9D1E1471805F2 /* Pods */,
+				57759C1E2D77DA54BBB2A7F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,15 +78,110 @@
 		0F2A080A252E3131000B4015 /* RxBSUIRSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				0F2A080B252E3131000B4015 /* AppDelegate.swift */,
-				0F2A080D252E3131000B4015 /* SceneDelegate.swift */,
-				0F2A080F252E3131000B4015 /* ViewController.swift */,
-				0F2A0811252E3131000B4015 /* Main.storyboard */,
+				0F2A083D252E3755000B4015 /* API */,
+				0F2A0830252E3287000B4015 /* Modules */,
+				0F2A0829252E31C9000B4015 /* Utilities */,
+				0F2A082F252E3273000B4015 /* DefaultFiles */,
 				0F2A0814252E3133000B4015 /* Assets.xcassets */,
-				0F2A0816252E3133000B4015 /* LaunchScreen.storyboard */,
 				0F2A0819252E3133000B4015 /* Info.plist */,
 			);
 			path = RxBSUIRSchedule;
+			sourceTree = "<group>";
+		};
+		0F2A0829252E31C9000B4015 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A0841252E37E5000B4015 /* Configurations */,
+				0F2A0839252E3504000B4015 /* Class+Extensions */,
+				0F2A082A252E31D2000B4015 /* Protocols */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0F2A082A252E31D2000B4015 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A082B252E31DE000B4015 /* StoryboardedProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		0F2A082F252E3273000B4015 /* DefaultFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A0816252E3133000B4015 /* LaunchScreen.storyboard */,
+				0F2A080B252E3131000B4015 /* AppDelegate.swift */,
+				0F2A080D252E3131000B4015 /* SceneDelegate.swift */,
+			);
+			path = DefaultFiles;
+			sourceTree = "<group>";
+		};
+		0F2A0830252E3287000B4015 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A0847252E3B1D000B4015 /* GroupSchedule */,
+				0F2A0831252E328F000B4015 /* GroupInput */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0F2A0831252E328F000B4015 /* GroupInput */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A0832252E32AB000B4015 /* GroupInputController.swift */,
+				0F2A0836252E32B9000B4015 /* GroupInputController.storyboard */,
+			);
+			path = GroupInput;
+			sourceTree = "<group>";
+		};
+		0F2A0839252E3504000B4015 /* Class+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A083A252E3513000B4015 /* UIViewController+Extensions.swift */,
+			);
+			path = "Class+Extensions";
+			sourceTree = "<group>";
+		};
+		0F2A083D252E3755000B4015 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A083E252E376E000B4015 /* APIRequests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0F2A0841252E37E5000B4015 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A0842252E37F2000B4015 /* APIConfigurations.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		0F2A0847252E3B1D000B4015 /* GroupSchedule */ = {
+			isa = PBXGroup;
+			children = (
+				0F2A0848252E3B33000B4015 /* GroupScheduleController.swift */,
+				0F2A084B252E3B3E000B4015 /* GroupScheduleController.storyboard */,
+			);
+			path = GroupSchedule;
+			sourceTree = "<group>";
+		};
+		502431D160E9D1E1471805F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD45D7AEB756B24DAA06D261 /* Pods-RxBSUIRSchedule.debug.xcconfig */,
+				74598AD09C5BF6A8503516AC /* Pods-RxBSUIRSchedule.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		57759C1E2D77DA54BBB2A7F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07B99B3508D3382FB7F05BE4 /* Pods_RxBSUIRSchedule.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F2A081C252E3133000B4015 /* Build configuration list for PBXNativeTarget "RxBSUIRSchedule" */;
 			buildPhases = (
+				B2ED9CF0D5899D3B35A1038F /* [CP] Check Pods Manifest.lock */,
 				0F2A0804252E3131000B4015 /* Sources */,
 				0F2A0805252E3131000B4015 /* Frameworks */,
 				0F2A0806252E3131000B4015 /* Resources */,
+				75AA219297E31D82BBBDEB3B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,21 +244,69 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F2A0821252E313F000B4015 /* .gitignore in Resources */,
+				0F2A084C252E3B3E000B4015 /* GroupScheduleController.storyboard in Resources */,
 				0F2A0818252E3133000B4015 /* LaunchScreen.storyboard in Resources */,
 				0F2A0815252E3133000B4015 /* Assets.xcassets in Resources */,
-				0F2A0813252E3131000B4015 /* Main.storyboard in Resources */,
+				0F2A0837252E32B9000B4015 /* GroupInputController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75AA219297E31D82BBBDEB3B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxBSUIRSchedule/Pods-RxBSUIRSchedule-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxBSUIRSchedule/Pods-RxBSUIRSchedule-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBSUIRSchedule/Pods-RxBSUIRSchedule-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2ED9CF0D5899D3B35A1038F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxBSUIRSchedule-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0F2A0804252E3131000B4015 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F2A0810252E3131000B4015 /* ViewController.swift in Sources */,
+				0F2A082C252E31DE000B4015 /* StoryboardedProtocol.swift in Sources */,
+				0F2A0843252E37F2000B4015 /* APIConfigurations.swift in Sources */,
 				0F2A080C252E3131000B4015 /* AppDelegate.swift in Sources */,
+				0F2A083B252E3513000B4015 /* UIViewController+Extensions.swift in Sources */,
+				0F2A0833252E32AB000B4015 /* GroupInputController.swift in Sources */,
+				0F2A083F252E376E000B4015 /* APIRequests.swift in Sources */,
+				0F2A0849252E3B33000B4015 /* GroupScheduleController.swift in Sources */,
 				0F2A080E252E3131000B4015 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,14 +314,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0F2A0811252E3131000B4015 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0F2A0812252E3131000B4015 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0F2A0816252E3133000B4015 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,12 +443,14 @@
 		};
 		0F2A081D252E3133000B4015 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD45D7AEB756B24DAA06D261 /* Pods-RxBSUIRSchedule.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3TG9F8VMYJ;
 				INFOPLIST_FILE = RxBSUIRSchedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,12 +464,14 @@
 		};
 		0F2A081E252E3133000B4015 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74598AD09C5BF6A8503516AC /* Pods-RxBSUIRSchedule.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3TG9F8VMYJ;
 				INFOPLIST_FILE = RxBSUIRSchedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
