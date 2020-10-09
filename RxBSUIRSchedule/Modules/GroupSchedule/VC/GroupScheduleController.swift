@@ -24,7 +24,6 @@ extension ScheduleSection: SectionModelType {
     }
 }
 
-
 class GroupScheduleController: UIViewController, Storyboarded {
     
     enum Constants {
@@ -47,13 +46,7 @@ class GroupScheduleController: UIViewController, Storyboarded {
     @IBOutlet weak var groupTextField: UITextField!
     @IBOutlet weak var findButton: UIButton!
     @IBOutlet weak var scheduleTableView: UITableView!
-    @IBOutlet weak var firstWeekButton: UIButton!
-    @IBOutlet weak var secondWeekButton: UIButton!
-    @IBOutlet weak var thirdWeekButton: UIButton!
-    @IBOutlet weak var fifthWeekButton: UIButton!
-    @IBOutlet weak var allWeeksButton: UIButton!
-    @IBOutlet weak var weekLabel: UILabel!
-    
+    @IBOutlet weak var weeksView: WeeksView!
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,17 +104,6 @@ extension GroupScheduleController {
                 }
             })
             .disposed(by: disposeBag)
-        
-        viewModel.output.onWeekChange
-            .asObservable()
-            .subscribe(onNext: { [weak self] week in
-                if week != 0 {
-                    self?.weekLabel.text = "Неделя \(week)"
-                } else {
-                    self?.weekLabel.text = "Все недели"
-                }
-            })
-            .disposed(by: disposeBag)
     }
     
     private func bindOutputs() {
@@ -138,34 +120,9 @@ extension GroupScheduleController {
             .bind(to: viewModel.input.find)
             .disposed(by: disposeBag)
         
-        firstWeekButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.viewModel.input.weekNumber.accept(1)
-            })
-            .disposed(by: disposeBag)
-        
-        secondWeekButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.viewModel.input.weekNumber.accept(2)
-            })
-            .disposed(by: disposeBag)
-        
-        thirdWeekButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.viewModel.input.weekNumber.accept(3)
-            })
-            .disposed(by: disposeBag)
-        
-        fifthWeekButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.viewModel.input.weekNumber.accept(4)
-            })
-            .disposed(by: disposeBag)
-        
-        allWeeksButton.rx.tap
-            .subscribe(onNext: { [weak self] in
-                self?.viewModel.input.weekNumber.accept(0)
-            })
+        weeksView.viewModel.output.weekChange
+            .asObservable()
+            .bind(to: viewModel.input.weekNumber)
             .disposed(by: disposeBag)
     }
 }

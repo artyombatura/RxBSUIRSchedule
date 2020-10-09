@@ -9,14 +9,69 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WeeksView" customModule="RxBSUIRSchedule" customModuleProvider="target">
+            <connections>
+                <outlet property="allWeeksButton" destination="i2w-8E-Ksf" id="dAw-4n-VFD"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="5rL-zR-hEx"/>
+                <outlet property="firstWeekButton" destination="B2K-Zb-VU9" id="rmE-Ai-oH3"/>
+                <outlet property="fourthWeekButton" destination="cmi-Qf-Ae1" id="LVL-bg-dai"/>
+                <outlet property="secondWeekButton" destination="Qpx-pA-ynB" id="6GE-gW-le2"/>
+                <outlet property="thirdWeekButton" destination="B5y-N8-38Z" id="mkG-RQ-Ho6"/>
+                <outlet property="weekLabel" destination="tAk-4w-sYM" id="byN-Yg-h3c"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="553" height="144"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mv9-Jk-Rle">
+                    <rect key="frame" x="0.0" y="0.0" width="553" height="144"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Неделя" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAk-4w-sYM">
+                            <rect key="frame" x="247" y="0.0" width="59" height="72"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="WtG-fJ-wVx">
+                            <rect key="frame" x="121.5" y="72" width="310" height="72"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2K-Zb-VU9">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="72"/>
+                                    <state key="normal" title="1"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qpx-pA-ynB">
+                                    <rect key="frame" x="70" y="0.0" width="30" height="72"/>
+                                    <state key="normal" title="2"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5y-N8-38Z">
+                                    <rect key="frame" x="140" y="0.0" width="30" height="72"/>
+                                    <state key="normal" title="3"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmi-Qf-Ae1">
+                                    <rect key="frame" x="210" y="0.0" width="30" height="72"/>
+                                    <state key="normal" title="4"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2w-8E-Ksf">
+                                    <rect key="frame" x="280" y="0.0" width="30" height="72"/>
+                                    <state key="normal" title="Все"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="141" y="117"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mv9-Jk-Rle" secondAttribute="trailing" id="LQp-BP-Rbj"/>
+                <constraint firstItem="mv9-Jk-Rle" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MaR-EL-ghp"/>
+                <constraint firstItem="mv9-Jk-Rle" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ObD-jx-iOB"/>
+                <constraint firstItem="mv9-Jk-Rle" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="m0P-xs-KjF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="270.28985507246381" y="-247.09821428571428"/>
         </view>
     </objects>
     <resources>

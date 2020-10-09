@@ -20,14 +20,13 @@ final class GroupScheduleViewModel {
     struct Input {
         let groupNumber: PublishRelay<String> = PublishRelay<String>()
         let find: PublishRelay<Void> = PublishRelay<Void>()
-        let weekNumber: BehaviorRelay<Int> = BehaviorRelay<Int>(value: 0)
+        let weekNumber: BehaviorRelay<WeekNumber> = BehaviorRelay<WeekNumber>(value: .All)
     }
     
     struct Output {
         let groupSchedule: Driver<[Day]>
         let loadingState: Driver<LoadingState>
         let networkError: Signal<Error>
-        let onWeekChange: Driver<Int>
     }
     
     let input = Input()
@@ -44,8 +43,7 @@ final class GroupScheduleViewModel {
     init() {
         output = Output(groupSchedule: filteredSchedule.asDriver(),
                         loadingState: loadingState.asDriver(onErrorJustReturn: .None),
-                        networkError: networkFetchResult.asSignal(),
-                        onWeekChange: input.weekNumber.asDriver())
+                        networkError: networkFetchResult.asSignal())
         
         self.bind()
     }
@@ -80,10 +78,10 @@ final class GroupScheduleViewModel {
         // Filter schedule
         Observable<[Day]>
             .combineLatest(schedule, input.weekNumber) { (schedule, weekNumber) -> [Day] in
-                if weekNumber == 0 { return schedule }
+                if weekNumber == .All { return schedule }
                 else {
                     return schedule.map { (day) -> Day in
-                        day.getSchedule(forWeekNumber: weekNumber)
+                        day.getSchedule(forWeekNumber: weekNumber.rawValue)
                     }
                 }
             }
