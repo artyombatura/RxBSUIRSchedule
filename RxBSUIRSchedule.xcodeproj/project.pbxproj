@@ -24,14 +24,13 @@
 		F878F404252EFEF30056D919 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F403252EFEF30056D919 /* Day.swift */; };
 		F878F407252EFF550056D919 /* JSONResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F406252EFF550056D919 /* JSONResponseDecoder.swift */; };
 		F878F40A252EFF6A0056D919 /* ResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F409252EFF6A0056D919 /* ResponseDecoder.swift */; };
-		F878F410252F02330056D919 /* JSONToScheduleResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F40F252F02330056D919 /* JSONToScheduleResponseDecoder.swift */; };
-		F878F416252F029B0056D919 /* JSONToEmployeeResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F415252F029B0056D919 /* JSONToEmployeeResponseDecoder.swift */; };
-		F878F41B252F02B70056D919 /* JSONToDayListResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F41A252F02B70056D919 /* JSONToDayListResponseDecoder.swift */; };
-		F878F41E252F02D80056D919 /* JSONToDayResponseDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F41D252F02D80056D919 /* JSONToDayResponseDecoder.swift */; };
 		F878F423252F07580056D919 /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F422252F07580056D919 /* SubjectTableViewCell.swift */; };
 		F878F427252F08BD0056D919 /* ProjectColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F426252F08BD0056D919 /* ProjectColors.swift */; };
 		F878F42D252F098F0056D919 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F42C252F098F0056D919 /* ImageLoader.swift */; };
 		F878F461252F2B3B0056D919 /* GroupScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F878F460252F2B3B0056D919 /* GroupScheduleViewModel.swift */; };
+		F8BE42D82530A2E7006101DA /* WeeksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE42D72530A2E7006101DA /* WeeksView.swift */; };
+		F8BE42DB2530A2EF006101DA /* WeeksView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8BE42DA2530A2EF006101DA /* WeeksView.xib */; };
+		F8BE42E32530A3AA006101DA /* WeeksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE42E22530A3AA006101DA /* WeeksViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,14 +55,13 @@
 		F878F403252EFEF30056D919 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		F878F406252EFF550056D919 /* JSONResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponseDecoder.swift; sourceTree = "<group>"; };
 		F878F409252EFF6A0056D919 /* ResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoder.swift; sourceTree = "<group>"; };
-		F878F40F252F02330056D919 /* JSONToScheduleResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToScheduleResponseDecoder.swift; sourceTree = "<group>"; };
-		F878F415252F029B0056D919 /* JSONToEmployeeResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToEmployeeResponseDecoder.swift; sourceTree = "<group>"; };
-		F878F41A252F02B70056D919 /* JSONToDayListResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToDayListResponseDecoder.swift; sourceTree = "<group>"; };
-		F878F41D252F02D80056D919 /* JSONToDayResponseDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONToDayResponseDecoder.swift; sourceTree = "<group>"; };
 		F878F422252F07580056D919 /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
 		F878F426252F08BD0056D919 /* ProjectColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectColors.swift; sourceTree = "<group>"; };
 		F878F42C252F098F0056D919 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		F878F460252F2B3B0056D919 /* GroupScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupScheduleViewModel.swift; sourceTree = "<group>"; };
+		F8BE42D72530A2E7006101DA /* WeeksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksView.swift; sourceTree = "<group>"; };
+		F8BE42DA2530A2EF006101DA /* WeeksView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeeksView.xib; sourceTree = "<group>"; };
+		F8BE42E22530A3AA006101DA /* WeeksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeksViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				F878F3FD252EFEAD0056D919 /* Schedule.swift */,
-				F878F40F252F02330056D919 /* JSONToScheduleResponseDecoder.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -224,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				F878F400252EFEE70056D919 /* Employee.swift */,
-				F878F415252F029B0056D919 /* JSONToEmployeeResponseDecoder.swift */,
 			);
 			path = Employee;
 			sourceTree = "<group>";
@@ -233,8 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				F878F403252EFEF30056D919 /* Day.swift */,
-				F878F41A252F02B70056D919 /* JSONToDayListResponseDecoder.swift */,
-				F878F41D252F02D80056D919 /* JSONToDayResponseDecoder.swift */,
 			);
 			path = Day;
 			sourceTree = "<group>";
@@ -242,6 +236,7 @@
 		F878F420252F073E0056D919 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				F8BE42D62530A2CA006101DA /* WeeksView */,
 				F878F422252F07580056D919 /* SubjectTableViewCell.swift */,
 			);
 			path = Subviews;
@@ -277,6 +272,32 @@
 			isa = PBXGroup;
 			children = (
 				F878F460252F2B3B0056D919 /* GroupScheduleViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		F8BE42D62530A2CA006101DA /* WeeksView */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE42E02530A30D006101DA /* VM */,
+				F8BE42DD2530A303006101DA /* V */,
+			);
+			path = WeeksView;
+			sourceTree = "<group>";
+		};
+		F8BE42DD2530A303006101DA /* V */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE42D72530A2E7006101DA /* WeeksView.swift */,
+				F8BE42DA2530A2EF006101DA /* WeeksView.xib */,
+			);
+			path = V;
+			sourceTree = "<group>";
+		};
+		F8BE42E02530A30D006101DA /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				F8BE42E22530A3AA006101DA /* WeeksViewModel.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -344,6 +365,7 @@
 				0F2A084C252E3B3E000B4015 /* GroupScheduleController.storyboard in Resources */,
 				0F2A0818252E3133000B4015 /* LaunchScreen.storyboard in Resources */,
 				0F2A0815252E3133000B4015 /* Assets.xcassets in Resources */,
+				F8BE42DB2530A2EF006101DA /* WeeksView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,10 +418,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F878F41E252F02D80056D919 /* JSONToDayResponseDecoder.swift in Sources */,
 				0F2A082C252E31DE000B4015 /* StoryboardedProtocol.swift in Sources */,
+				F8BE42D82530A2E7006101DA /* WeeksView.swift in Sources */,
 				F878F42D252F098F0056D919 /* ImageLoader.swift in Sources */,
-				F878F410252F02330056D919 /* JSONToScheduleResponseDecoder.swift in Sources */,
 				0F2A0843252E37F2000B4015 /* APIConfigurations.swift in Sources */,
 				0F2A080C252E3131000B4015 /* AppDelegate.swift in Sources */,
 				F878F401252EFEE70056D919 /* Employee.swift in Sources */,
@@ -411,11 +432,10 @@
 				0F2A083F252E376E000B4015 /* APIRequests.swift in Sources */,
 				0F2A0849252E3B33000B4015 /* GroupScheduleController.swift in Sources */,
 				F878F40A252EFF6A0056D919 /* ResponseDecoder.swift in Sources */,
+				F8BE42E32530A3AA006101DA /* WeeksViewModel.swift in Sources */,
 				0F2A080E252E3131000B4015 /* SceneDelegate.swift in Sources */,
-				F878F41B252F02B70056D919 /* JSONToDayListResponseDecoder.swift in Sources */,
 				F878F461252F2B3B0056D919 /* GroupScheduleViewModel.swift in Sources */,
 				F878F407252EFF550056D919 /* JSONResponseDecoder.swift in Sources */,
-				F878F416252F029B0056D919 /* JSONToEmployeeResponseDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

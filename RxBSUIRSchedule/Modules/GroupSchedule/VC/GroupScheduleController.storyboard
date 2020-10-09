@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Ap-k5-jpg">
-                                <rect key="frame" x="0.0" y="104" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="174" width="414" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubjectTableViewCell" rowHeight="111" id="BGD-yA-NCy" customClass="SubjectTableViewCell" customModule="RxBSUIRSchedule" customModuleProvider="target">
@@ -86,7 +86,7 @@
                                             <outlet property="subjectImageView" destination="78l-7Q-Wgr" id="9sK-4V-fMJ"/>
                                             <outlet property="subjectNameLabel" destination="2fs-0i-6s9" id="B0W-os-hbu"/>
                                             <outlet property="subjectPlaceLabel" destination="c6m-DM-Xno" id="E5s-KF-rNC"/>
-                                            <outlet property="subjectWeeksLabel" destination="BmL-At-g20" id="YET-XG-7FY"/>
+                                            <outlet property="subjectTimeLabel" destination="BmL-At-g20" id="abK-Os-b7q"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -109,25 +109,73 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AOa-7Z-DOD">
+                                <rect key="frame" x="20" y="104" width="374" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Неделя" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgN-mf-2yG">
+                                        <rect key="frame" x="157.5" y="0.0" width="59" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="NQ9-eU-t5D">
+                                        <rect key="frame" x="32" y="30" width="310" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9p-1c-Lqd">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="1"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQh-gz-bjE">
+                                                <rect key="frame" x="70" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="2"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKg-ZD-h48">
+                                                <rect key="frame" x="140" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="3"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6D-MR-UUK">
+                                                <rect key="frame" x="210" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="4"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnp-hV-ulZ">
+                                                <rect key="frame" x="280" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="Все"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="VfP-rw-Dx2"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tat-xz-8hZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3Ap-k5-jpg" firstAttribute="top" secondItem="AOa-7Z-DOD" secondAttribute="bottom" constant="10" id="7am-jG-jNT"/>
                             <constraint firstItem="Tat-xz-8hZ" firstAttribute="trailing" secondItem="SVb-xT-mhK" secondAttribute="trailing" constant="10" id="8s6-pv-v7Z"/>
                             <constraint firstItem="IHu-xx-Zrh" firstAttribute="top" secondItem="Tat-xz-8hZ" secondAttribute="top" constant="10" id="AFL-f5-i30"/>
                             <constraint firstItem="IHu-xx-Zrh" firstAttribute="leading" secondItem="Tat-xz-8hZ" secondAttribute="leading" constant="20" id="APQ-Xj-8wS"/>
                             <constraint firstAttribute="bottom" secondItem="3Ap-k5-jpg" secondAttribute="bottom" id="Fn9-Me-Xk6"/>
+                            <constraint firstItem="AOa-7Z-DOD" firstAttribute="leading" secondItem="Tat-xz-8hZ" secondAttribute="leading" constant="20" id="HXS-XK-Y8e"/>
+                            <constraint firstItem="Tat-xz-8hZ" firstAttribute="trailing" secondItem="AOa-7Z-DOD" secondAttribute="trailing" constant="20" id="RDE-gF-P7j"/>
                             <constraint firstItem="SVb-xT-mhK" firstAttribute="centerY" secondItem="IHu-xx-Zrh" secondAttribute="centerY" id="UND-v5-c44"/>
-                            <constraint firstItem="3Ap-k5-jpg" firstAttribute="top" secondItem="IHu-xx-Zrh" secondAttribute="bottom" constant="10" id="UQj-6g-orv"/>
                             <constraint firstItem="3Ap-k5-jpg" firstAttribute="leading" secondItem="Tat-xz-8hZ" secondAttribute="leading" id="aZY-cI-tAj"/>
                             <constraint firstItem="SVb-xT-mhK" firstAttribute="leading" secondItem="IHu-xx-Zrh" secondAttribute="trailing" constant="10" id="eTn-3b-zxB"/>
                             <constraint firstItem="Tat-xz-8hZ" firstAttribute="trailing" secondItem="3Ap-k5-jpg" secondAttribute="trailing" id="xjw-s2-Pjd"/>
+                            <constraint firstItem="AOa-7Z-DOD" firstAttribute="top" secondItem="IHu-xx-Zrh" secondAttribute="bottom" constant="10" id="yLl-8Y-8aD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allWeeksButton" destination="fnp-hV-ulZ" id="br0-Kd-4KY"/>
+                        <outlet property="fifthWeekButton" destination="b6D-MR-UUK" id="IQB-JX-ltz"/>
                         <outlet property="findButton" destination="SVb-xT-mhK" id="rTj-wI-nf5"/>
+                        <outlet property="firstWeekButton" destination="j9p-1c-Lqd" id="QgI-nm-cmy"/>
                         <outlet property="groupTextField" destination="IHu-xx-Zrh" id="3vr-DH-h27"/>
                         <outlet property="scheduleTableView" destination="3Ap-k5-jpg" id="ch1-Dw-CEU"/>
+                        <outlet property="secondWeekButton" destination="xQh-gz-bjE" id="GCe-Gp-855"/>
+                        <outlet property="thirdWeekButton" destination="NKg-ZD-h48" id="wdB-s2-7Vg"/>
+                        <outlet property="weekLabel" destination="DgN-mf-2yG" id="7Np-1n-o6w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rvp-UN-J97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

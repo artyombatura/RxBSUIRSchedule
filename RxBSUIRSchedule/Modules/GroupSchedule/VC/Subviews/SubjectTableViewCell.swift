@@ -23,7 +23,8 @@ class SubjectTableViewCell: UITableViewCell {
     @IBOutlet weak var subjectImageView: UIImageView!
     @IBOutlet weak var subjectNameLabel: UILabel!
     @IBOutlet weak var subjectPlaceLabel: UILabel!
-    @IBOutlet weak var subjectWeeksLabel: UILabel!
+    @IBOutlet weak var subjectTimeLabel: UILabel!
+    
     
     // MARK: - Lifecycle
     override func awakeFromNib() {
@@ -96,6 +97,8 @@ extension SubjectTableViewCell {
             subjectWeeks.append("\(week) ")
         })
         
-        subjectWeeksLabel.text = subjectWeeks
+//        subjectWeeksLabel.text = subjectWeeks
+        subjectTimeLabel.text = schedule.lessonTime ?? "Время не указано"
     }
 }
+

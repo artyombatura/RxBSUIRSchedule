@@ -19,6 +19,6 @@ enum APIError: Error {
     case buildURLFailure
     case NotFound
     case InvalidDecoder
-    case BuildJSONFailure
     case BuildModelFailure
+    case BuildJSONFailure
 }

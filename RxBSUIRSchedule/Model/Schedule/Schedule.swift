@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 enum LessonType: String {
     case lk = "ЛК"
@@ -14,7 +15,6 @@ enum LessonType: String {
 }
 
 class Schedule {
-    
     public var weekNumber: [Int]?
     public var studentGroup: String?
     public var numSubgroup: Int?
@@ -45,4 +45,55 @@ class Schedule {
         self.zaoch = zaoch
     }
     
+    init(withJSON json: JSON) throws {
+        guard
+            let weekNumber = json["weekNumber"].arrayObject,
+            let studentGroup = json["studentGroup"].arrayObject,
+            let numSubgroup = json["numSubgroup"].int,
+            let auditory = json["auditory"].arrayObject,
+            let lessonTime = json["lessonTime"].string,
+            let startLessonTime = json["startLessonTime"].string,
+            let endLessonTime = json["endLessonTime"].string,
+            let subject = json["subject"].string,
+            /*let note = json["note"].string,*/
+            let lessonTypeString = json["lessonType"].string,
+            /*let employeeJSON = json["employee"].array,*/
+            let zaoch = json["zaoch"].bool
+        else { throw APIError.BuildJSONFailure }
+        
+        if let employeeJSON = json["employee"].array {
+            if employeeJSON.count > 0 {
+                do {
+                    employee = try Employee(withJSON: employeeJSON.first!)
+                } catch {
+                    throw error
+                }
+            }
+        }
+        
+        let weekNumberInt = weekNumber.map { $0 as! Int }
+        guard
+            let studentGroupObject = (studentGroup.first) as? String
+        else {
+            throw APIError.InvalidDecoder
+        }
+        
+        var auditoryObject: String?
+        if let aud = auditory.first {
+            auditoryObject = aud as? String
+        }
+        
+        // INIT
+        self.weekNumber = weekNumberInt
+        self.studentGroup = studentGroupObject
+        self.numSubgroup = numSubgroup
+        self.auditory = auditoryObject
+        self.lessonTime = lessonTime
+        self.startLessonTime = startLessonTime
+        self.endLessonTime = endLessonTime
+        self.subject = subject
+        self.note = ""
+        self.lessonType = LessonType(rawValue: lessonTypeString) ?? .pz
+        self.zaoch = zaoch
+    }
 }

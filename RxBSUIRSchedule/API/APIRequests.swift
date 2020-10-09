@@ -8,7 +8,10 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxRelay
 import SwiftyJSON
+
+
 
 class APIRequests {
     public static func getSchedule(_ forGroupNumber: Int) -> Single<[Day]> {
@@ -29,14 +32,13 @@ class APIRequests {
                         
                         if let data = data {
                             if let json = try? JSON(data: data) {
-                                let decoder = JSONToDayListResponseDecoder()
-                                if let model = try? decoder.decode(json: json) {
+                                if let model = try? Day.buildDaysArray(fromJSON: json) {
                                     single(.success(model))
                                 } else {
                                     single(.error(APIError.BuildModelFailure))
                                 }
                             } else {
-                                single(.error(APIError.BuildJSONFailure))
+                                single(.error(APIError.NotFound))
                             }
                         } else {
                             single(.error(APIError.NotFound))

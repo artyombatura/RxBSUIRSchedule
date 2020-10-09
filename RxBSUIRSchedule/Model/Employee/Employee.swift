@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 class Employee {
     public var firstName: String?
@@ -33,4 +34,34 @@ class Employee {
     }
     
     init(){}
+    
+    init(withJSON json: JSON) throws {
+        guard
+            let firstName = json["firstName"].string,
+            let lastName = json["lastName"].string,
+            let middleName = json["middleName"].string,
+            /*let photoLink = json["photoLink"].string,*/
+            let academicDepartment = json["academicDepartment"].arrayObject,
+            let id = json["id"].int,
+            let fio = json["fio"].string
+        else { throw APIError.BuildJSONFailure }
+        
+        var rank = ""
+        if let rankFromJson = json["rank"].string {
+            rank = rankFromJson
+        }
+        
+        let academicDepartmentStrings = academicDepartment.map { $0 as! String }
+        
+        photoLink = json["photoLink"].string
+        
+        self.firstName = firstName
+        self.lastName = lastName
+        self.middleName = middleName
+        self.rank = rank
+        self.academicDepartment = academicDepartmentStrings
+        self.id = id
+        self.fio = fio
+    }
+    
 }

@@ -10,10 +10,35 @@ import RxSwift
 import RxDataSources
 import SwiftyJSON
 
+struct ScheduleSection {
+    var header: String
+    var items: [Item]
+}
+
+extension ScheduleSection: SectionModelType {
+    typealias Item = Schedule
+    
+    init(original: ScheduleSection, items: [Schedule]) {
+        self = original
+        self.items = items
+    }
+}
+
+
 class GroupScheduleController: UIViewController, Storyboarded {
+    
+    enum Constants {
+        static var tableSectionHeightInHeader: CGFloat { return 40.0 }
+        static var tableSectionLabelSizeInHeader: CGFloat { return 20.0 }
+    }
     
     // MARK: - Properties
     private let disposeBag = DisposeBag()
+    let dataSource = RxTableViewSectionedReloadDataSource<ScheduleSection> { (dataSource, tableView, indexPath, item) -> UITableViewCell in
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SubjectTableViewCell", for: indexPath) as! SubjectTableViewCell
+        cell.configureCell(for: item)
+        return cell
+    }
     
     // MARK: - ViewModel
     private var viewModel = GroupScheduleViewModel()
@@ -22,13 +47,19 @@ class GroupScheduleController: UIViewController, Storyboarded {
     @IBOutlet weak var groupTextField: UITextField!
     @IBOutlet weak var findButton: UIButton!
     @IBOutlet weak var scheduleTableView: UITableView!
+    @IBOutlet weak var firstWeekButton: UIButton!
+    @IBOutlet weak var secondWeekButton: UIButton!
+    @IBOutlet weak var thirdWeekButton: UIButton!
+    @IBOutlet weak var fifthWeekButton: UIButton!
+    @IBOutlet weak var allWeeksButton: UIButton!
+    @IBOutlet weak var weekLabel: UILabel!
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         style()
-        config()
+        configDataSource()
         bind()
     }
 }
@@ -42,15 +73,16 @@ extension GroupScheduleController {
     
     private func bindInputs() {
         viewModel.output.groupSchedule
-            .asObservable()
-            .subscribe(onNext: { [weak self] days in
-                print(days)
-                DispatchQueue.main.async {
-                    self?.scheduleTableView.reloadData()
+            .map { (schedule) -> [ScheduleSection] in
+                schedule.map { (day) -> ScheduleSection in
+                    return ScheduleSection(header: day.weekDay ?? "",
+                                           items: day.schedule ?? [Schedule]())
                 }
-            })
+            }
+            .asObservable()
+            .bind(to: scheduleTableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        
+
         viewModel.output.loadingState
             .asObservable()
             .subscribe(onNext: { [weak self] state in
@@ -62,6 +94,31 @@ extension GroupScheduleController {
                     case .None:
                         self?.navigationController?.setNavigationBarHidden(true, animated: true)
                     }
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.networkError
+            .asObservable()
+            .subscribe(onNext: { [weak self] error in
+                if let error = error as? APIError {
+                    switch error {
+                    case .NotFound:
+                        self?.showAllert(title: "Расписание не найдено",
+                                         message: "Проверьте номер группы и попробуйте снова")
+                    default: break
+                    }
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.output.onWeekChange
+            .asObservable()
+            .subscribe(onNext: { [weak self] week in
+                if week != 0 {
+                    self?.weekLabel.text = "Неделя \(week)"
+                } else {
+                    self?.weekLabel.text = "Все недели"
                 }
             })
             .disposed(by: disposeBag)
@@ -80,6 +137,36 @@ extension GroupScheduleController {
         findButton.rx.tap
             .bind(to: viewModel.input.find)
             .disposed(by: disposeBag)
+        
+        firstWeekButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.input.weekNumber.accept(1)
+            })
+            .disposed(by: disposeBag)
+        
+        secondWeekButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.input.weekNumber.accept(2)
+            })
+            .disposed(by: disposeBag)
+        
+        thirdWeekButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.input.weekNumber.accept(3)
+            })
+            .disposed(by: disposeBag)
+        
+        fifthWeekButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.input.weekNumber.accept(4)
+            })
+            .disposed(by: disposeBag)
+        
+        allWeeksButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.input.weekNumber.accept(0)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -87,67 +174,16 @@ extension GroupScheduleController {
 extension GroupScheduleController {
     private func style() {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.navigationBar.backgroundColor = UIColor.yellow
+        self.navigationController?.navigationBar.barTintColor = UIColor.yellow
     }
 }
 
-// MARK: - Config
-extension GroupScheduleController {
-    private func config() {
-        scheduleTableView.delegate = self
-        scheduleTableView.dataSource = self
+// MARK: - Config scheduleTableView
+extension GroupScheduleController: UITableViewDelegate {
+    private func configDataSource() {
+        dataSource.titleForHeaderInSection = { dataSource, index in
+            return dataSource.sectionModels[index].header
+        }
     }
-}
-
-
-// MARK: - UITableViewDelegate & UITableViewDataSource
-extension GroupScheduleController:
-    UITableViewDelegate, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.scheduleItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.scheduleItems[section].scheduleForCurrentWeek.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: SubjectTableViewCell.identifier, for: indexPath) as? SubjectTableViewCell
-        else { return UITableViewCell() }
-
-        let schedule = viewModel.scheduleItems[indexPath.section].scheduleForCurrentWeek[indexPath.row]
-        cell.configureCell(for: schedule)
-        
-        return cell
-    }
-    
-    // Header for cell
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40.0))
-        let title = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 40.0))
-        
-        view.addSubview(title)
-        
-        view.backgroundColor = .clear
-        
-        title.textColor = .black
-        title.font = UIFont.systemFont(ofSize: 20.0, weight: .medium)
-        title.textAlignment = .center
-        
-        let text = viewModel.scheduleItems[section].weekDay ?? ""
-        
-        title.text = text
-        
-        return view
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0
-    }
-
 }
