@@ -56,14 +56,20 @@ final class GroupScheduleViewModel {
             .flatMap { (groupNumberString) -> Single<[Day]> in
                 if let groupNumber = Int(groupNumberString) {
                     return APIRequests.getSchedule(groupNumber)
-                        .do { [weak self] days in
+                        .do(onSuccess: { [weak self] _ in
                             self?.loadingState.accept(.None)
-                        } onError: { [weak self] (error) in
+                        },
+                            afterSuccess: nil,
+                        onError: { [weak self] error in
                             self?.loadingState.accept(.None)
                             self?.networkFetchResult.accept(error)
-                        } onSubscribe: { [weak self] in
+                        },
+                            afterError: nil,
+                        onSubscribe: { [weak self] in
                             self?.loadingState.accept(.Loading)
-                        }
+                        },
+                            onSubscribed: nil,
+                            onDispose: nil)
                         .catchError({ (error) -> Single<[Day]> in
                             .just([])
                         })
