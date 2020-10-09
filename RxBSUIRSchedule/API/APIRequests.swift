@@ -49,9 +49,7 @@ class APIRequests {
                 } else {
                     single(.error(APIError.buildURLFailure))
                 }
-                
-            }
-            
+            }           
             return Disposables.create()
         }
     }

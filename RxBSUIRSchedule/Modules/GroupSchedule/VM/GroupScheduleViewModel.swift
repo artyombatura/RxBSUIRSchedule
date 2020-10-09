@@ -34,7 +34,6 @@ final class GroupScheduleViewModel {
     
     private let schedule = BehaviorRelay<[Day]>(value: [])
     private let filteredSchedule = BehaviorRelay<[Day]>(value: [])
-    public var scheduleItems: [Day] = [Day]()
     private let loadingState: PublishRelay<LoadingState> = PublishRelay<LoadingState>()
     private let networkFetchResult: PublishRelay<Error> = PublishRelay<Error>()
     
@@ -58,7 +57,6 @@ final class GroupScheduleViewModel {
                 if let groupNumber = Int(groupNumberString) {
                     return APIRequests.getSchedule(groupNumber)
                         .do { [weak self] days in
-                            self?.scheduleItems = days
                             self?.loadingState.accept(.None)
                         } onError: { [weak self] (error) in
                             self?.loadingState.accept(.None)
@@ -85,9 +83,6 @@ final class GroupScheduleViewModel {
                     }
                 }
             }
-            .do(onNext: { [weak self] (schedule) in
-                self?.scheduleItems = schedule
-            })
             .bind(to: self.filteredSchedule)
             .disposed(by: disposeBag)
     }
